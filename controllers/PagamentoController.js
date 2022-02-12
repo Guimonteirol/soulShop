@@ -7,11 +7,11 @@ class PagamentoController{
         const {nomeP} = req.query;
 
         const pagamentos = await Pagamento.find(query).lean();
-        res.render("pagamentos", {pagamentos, nomeP});
+        res.render("pagamento/pagamentos", {pagamentos, nomeP});
     }
 
     static async escolherPagamento(req, res){
-        res.render('add_pagamento')
+        res.render('pagamento/add_pagamento')
     }
 
     static async addPagamento(req, res){
@@ -25,7 +25,7 @@ class PagamentoController{
     static async paginaEditPagamento(req, res){
         const { id } = req.params;
         const pagamento = await Pagamento.findById(id).lean();
-        res.render("editar_pagamento",{pagamento})
+        res.render("pagamento/editar_pagamento",{pagamento})
     }
 
     static async editPagamento(req, res){

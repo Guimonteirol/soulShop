@@ -10,11 +10,11 @@ class ProdutoController{
         }
 
         const produtos = await Produto.find(query).lean();
-        res.render("produtos", {produtos, nomeProduto});
+        res.render("produto/produtos", {produtos, nomeProduto});
     }
 
     static async paginaAdicionarProduto(req, res){
-        res.render("add_produto");
+        res.render("produto/add_produto");
     }
 
     static async addProduto(req, res){
@@ -28,7 +28,7 @@ class ProdutoController{
     static async paginaEditProduto(req, res){
         const { id } = req.params;
         const produto = await Produto.findById(id).lean();
-        res.render("editar_produto",{produto})
+        res.render("produto/editar_produto",{produto})
     }
 
     static async editProduto(req, res){
