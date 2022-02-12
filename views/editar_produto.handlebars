@@ -1,0 +1,53 @@
+<div class="m-1">
+  <div class="m-1">
+  <h2>Editar produto</h2>
+  <hr />
+  <form action="/produtos/atualizar" method="POST">
+  <input type="hidden" name="id" value="{{produto._id}}">
+    <div class="form-group">
+      <label for="name">Nome*</label>
+      <input
+       type="text"
+       name="name"
+       id="name"
+       class="form-control"
+       value="{{produto.name}}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="price">Preço*</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        class="form-control"
+        step=".1"
+        value="{{produto.price}}"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição*</label>
+      <textarea
+        name="description"
+        id="description"
+        rows="10"
+        class="form-control"
+        required
+      >{{produto.description}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantidade*</label>
+      <input
+        type="number"
+        name="quantity"
+        id="quantity"
+        class="form-control"
+        value="{{produto.quantity}}"
+        required
+      />
+    </div>
+    <button class="btn btn-primary mt-2">Atualizar</button>
+  </form>
+</div>
+</div>
