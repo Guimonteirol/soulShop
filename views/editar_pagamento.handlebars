@@ -1,0 +1,10 @@
+<section class="m-1">
+  <form action="/pagamentos/atualizar" method="POST">
+  <input type="hidden" name="id" value="{{pagamento._id}}">
+    <div class="form-group">
+      <label for="nomeP">Pagamento*</label>
+      <input type="text" name="nomeP" class="form-control" value="{{pagamento.nomeP}}" required />
+    </div>
+    <button class="btn btn-primary mt-2">Atualizar</button>
+  </form>
+</section>

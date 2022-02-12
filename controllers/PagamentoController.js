@@ -18,21 +18,28 @@ class PagamentoController{
         const {nomeP} = req.body
         const pagamento = Pagamento({nomeP})
         await pagamento.save();
-        
-        // const { id } = req.params;
-        // const pagamento = await Pagamento.findById(id).lean();
-    
-        // res.render("pagamentos", { pagamento });
 
         res.redirect("/pagamentos")
     }
 
-    static async escolhidoPagamento(req, res){
-        const {pagamento} = req.body;
-        const pagamentos = []
-        pagamentos.push({pagamento});
-        res.render('pagamentos')
+    static async paginaEditPagamento(req, res){
+        const { id } = req.params;
+        const pagamento = await Pagamento.findById(id).lean();
+        res.render("editar_pagamento",{pagamento})
+    }
 
+    static async editPagamento(req, res){
+        const {id, nomeP} = req.body;
+       
+        await Pagamento.findByIdAndUpdate(id, {nomeP});
+
+        res.redirect("/pagamentos");
+    }
+
+    static async deletePagamento(req, res){
+        const { id }= req.body
+        await Pagamento.findByIdAndDelete(id);
+        res.redirect("/pagamentos");
     }
 
 }

@@ -1,7 +1,28 @@
-{{#each pagamentos}}
-<h1>A forma de pagamento foi: {{this.nomeP}}</h1>
-  {{/each}}
-        <a href="/pagamento/editar">Editar Forma</a>
-        <a href="/produtos">Tabela de Produtos</a>
 
-<hr>
+{{#each pagamentos}}
+<div class="card" style="width: 18rem;">
+  <img src="https://s2.glbimg.com/sZsFGX1Ld-kTh23eLMwFSKcZKPs=/725x38:2048x825/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2020/a/W/J5s1YTTRi6AejH5tyBBg/pix.jpg"
+   class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.nomeP}}</h5>
+    <p class="card-text">A forma de pagamento escolhida foi no {{this.nomeP}} </p>
+  </div>
+  <div class="card-body">
+    <div class="d-flex">
+            <div>
+              <a href="/pagamento/editar/{{this._id}}" class="btn btn-sm btn-warning mx-1">
+                <i class="bi bi-pencil"></i>
+              </a>
+            </div>
+            <div>
+              <form action="/pagamento/deletar" method="POST">
+                <input name="id" type="hidden" value="{{this._id}}" />
+                <button class="btn btn-sm btn-danger">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </form>
+            </div>
+            </div>
+  </div>
+</div>
+ {{/each}}
