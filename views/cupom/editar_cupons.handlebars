@@ -1,0 +1,78 @@
+<div class="m-1">
+  <h2>Adicionar produto</h2>
+  <hr />
+  <form action="/cupons/atualizar" method="POST">
+   <input type="hidden" name="id" value="{{cupom._id}}">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col">
+          <img
+            src="/img/cupom.png"
+            width="100%"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">
+                <div class="form-group">
+                  <label for="nomeCupom">Nome*</label>
+                  <input
+                    type="text"
+                    name="nomeCupom"
+                    id="name"
+                    class="form-control"
+                    value="{{cupom.nomeCupom}}"
+                    required
+                  />
+                </div>
+              </h5>
+              <h5 class="card-title ps-3">
+                <div class="form-group">
+                  <label for="desconto">Preço*</label>
+                  <input
+                    type="number"
+                    name="desconto"
+                    id="price"
+                    class="form-control"
+                    step=".1"
+                    value="{{cupom.desconto}}"
+                    required
+                  />
+                </div>
+              </h5>
+            </div>
+            <p class="card-text">
+              <div class="form-group">
+                <label for=" descricao">Descrição*</label>
+                <textarea
+                  name="descricao"
+                  id="description"
+                  rows="10"
+                  class="form-control"
+                  value="{{cupom.descricao}}"
+                  required
+                ></textarea>
+              </div></p>
+            <p class="card-text"><small class="text-muted">
+                 <div class="form-group">
+                  <label for="validade">Validade*</label>
+                  <input
+                    type="text"
+                    name="validade"
+                    id="name"
+                    class="form-control"
+                    value="{{cupom.validade}}"
+                    required
+                  />
+                </div>    
+            </small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+       <button class="btn btn-primary mt-2">Editar</button>
+  </form>
+</div>

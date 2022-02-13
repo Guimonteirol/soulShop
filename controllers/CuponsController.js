@@ -25,6 +25,27 @@ class CuponsController{
 
         res.redirect("/cupons")
     }
+
+    static async paginaEditCupom(req, res){
+        const { id } = req.params;
+        const cupom = await Cupons.findById(id).lean();
+        res.render("cupom/editar_cupons",{cupom})
+    }
+
+    static async editCupom(req, res){
+        const {id, nomeCupom, desconto, descricao, validade} = req.body;
+
+        await Cupons.findByIdAndUpdate(id, {nomeCupom, desconto, descricao, validade});
+
+        res.redirect("/cupons");
+
+    }
+
+    static async deleteCupons(req, res){
+        const { id }= req.body
+        await Cupons.findByIdAndDelete(id);
+        res.redirect("/cupons");
+    }
 }
 
 module.exports = CuponsController
