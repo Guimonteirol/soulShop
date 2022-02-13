@@ -1,0 +1,52 @@
+
+  
+  <section class="m-1">
+      <a href="/vales/adicionar" class="btn btn-dark">
+        <i class="bi bi-plus"></i>
+        Criar Vale-Presente
+      </a>
+    <hr />
+    {{#each vale_presente}}
+      <div class="card mb-3 text-dark bg-warning"style="width: 30rem; margin: 3rem auto" >
+
+        <div class="row no-gutters">
+          
+            <div class="col-md-8">
+              <div class="card-body">
+                  <h3 class="card-title">{{this.titulo}}</h3>
+                    <p class="card-text">
+                      Parabéns, você acaba de ganhar um vale presente para ser utilizado em algum de nossos produtos.
+                    </p>
+                    <h2>R$ {{this.valor}}</h2>
+                    <p class="card-text">
+                      <small>Validade: {{this.validade}}</small>
+                    </p>
+              </div>
+          </div>
+              <div class="col-md-4">
+                <div>
+                  <img src="/img/logo_vale4.png"
+                      class="img-fluid rounded-start"
+                      alt="Profile Picture"/>
+                </div>
+                      <!--Botões-->
+                <div class="d-flex mt-3 mx-5">
+                    <div class="px-1">
+                      <a href="/vales/editar/{{this._id}}" class="btn btn-sm btn-success me-md-2">
+                        <i class="bi bi-pencil"></i>
+                      </a>
+                    </div>
+                    <div>
+                      <form action="/vales/deletar" method="POST">
+                        <input name="id" type="hidden" value="{{this._id}}" />
+                        <button class="btn btn-sm btn-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </form>
+                    </div>
+                </div><!--Fim Botões-->
+              </div>
+        </div>
+      </div>
+    {{/each}}
+  </section>
