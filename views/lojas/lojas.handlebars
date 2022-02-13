@@ -1,0 +1,50 @@
+<section class="m-1">
+  <a href="/lojas/novo" class="btn btn-dark">
+    <i class="bi bi-plus"></i>
+    Adicionar loja
+  </a>
+  <hr />
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Nº de Funcionários</th>
+        <th>Ações</th>
+      </thead>
+      <tbody>
+        {{#each lojas}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.employees}}</td>
+            <td>
+              <div class="d-flex">
+                <div>
+                  <a
+                    href="/lojas/editar/{{this._id}}"
+                    class="btn btn-sm btn-warning mx-1"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </a>
+                </div>
+                <div>
+                  <form action="/lojas/deletar" method="POST">
+                    <input
+                      name="id"
+                      type="hidden"
+                      value="{{this._id}}"
+                    />
+                    <button class="btn btn-sm btn-danger">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
