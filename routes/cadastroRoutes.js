@@ -3,9 +3,9 @@ const CadastroController = require("../controllers/CadastroController");
 const router = Router();
 
 router.get('/cadastros' , CadastroController.paginaCadastros);
-router.get("/cadastro/novo", CadastroController.paginaCadastro);
-router.post("/cadastro/enviar", CadastroController.addCadastro);
-
+router.get("/cadastros/novo", CadastroController.paginaCadastro);
+router.post("/cadastros/enviar", CadastroController.addCadastro);
+router.post("/cadastros/deletar", CadastroController.deleteCadastro);
 
 
 module.exports = router;

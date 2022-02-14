@@ -2,18 +2,18 @@
     <h2>Cadastre-se na SoulShop</h2>
     <div class="row">
         <div class="col-md-6">
-            <form method="POST" action="/cadastro/enviar" class="my-4">
+            <form method="POST" action="/cadastros/enviar" class="my-4">
                 <div class="">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
+                    <input type="text" name="name" class="form-control" id="nome" required>
                 </div>
                 <div class=" mt-3">
                     <label for="sobre" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobre" required>
+                    <input type="text" name="lastName"class="form-control" id="sobre" required>
                 </div>
                 <div class=" mt-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" name="email" class="form-control" id="email" required>
                 </div>
                 <div class=" mt-3">
                     <label for="emailConfirm" class="form-label">Confirme seu Email</label>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="mt-3">
                     <label for="endereco" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" placeholder="Rua..." required>
+                    <input type="text" name="adress" class="form-control" id="endereco" placeholder="Rua..." required>
                 </div>
                 <div class=" mt-3">
                     <label for="complemento" class="form-label">Complemento</label>
@@ -49,7 +49,7 @@
                                 <path fill-rule="evenodd"
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                             </svg></span>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
+                        <input type="text" name="userName" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" placeholder="Digite um username" required>
                     </div>
                     <div id="senha" class="input-group mb-3">
@@ -60,7 +60,7 @@
                                 <path
                                     d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                             </svg></span>
-                        <input type="password" class="form-control" aria-label="Sizing example input"
+                        <input type="password" name="password" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default" placeholder="Digite sua senha" required>
                     </div>
                     <div id="senhaConfirm" class="input-group mb-3">
@@ -78,7 +78,7 @@
                 <!--Check-->
                 <div class=" mt-5">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <input class="form-check-input" type="checkbox" name="newsletter" id="gridCheck">
                         <label class="form-check-label" for="gridCheck">
                             Deseja receber nossas notificações?
                         </label>

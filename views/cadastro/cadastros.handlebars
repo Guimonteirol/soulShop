@@ -1,0 +1,41 @@
+<div class="container">
+    <a href="/cadastros/novo" class="btn btn-dark mt-3">
+        <i class="bi bi-plus">Criar um cadastro</i>
+    </a>
+
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded mt-4 col-md-10">
+        <form method="GET">
+            <input type="text" name="nomeC" placeholder="Nome do user" class="form-control form-control-sm mt-3"
+                value="{{nomeC}}">
+            <button class="btn btn-sm btn-dark mt-3"><i class="bi bi-search"></i>Buscar</button>
+        </form>
+        <table class="table">
+            <thead>
+                <th>UserName</th>
+                <th>Email</th>
+                <th>Endereço</th>
+            </thead>
+            <tbody>
+                {{#each cadastros}}
+                <tr>
+                    <td>{{this.userName}}</td>
+                    <td>{{this.email}} </td>
+                    <td>{{this.adress}}</td>
+                    <td>
+                        <div class="d-flex">
+                            <div>
+                                <form action="/cadastros/deletar" method="POST">
+                                    <input name="id" type="hidden" value="{{this._id}}" />
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

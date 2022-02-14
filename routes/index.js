@@ -1,9 +1,10 @@
 const { Router } = require("express");
 const produtosRoutes = require("./produtosRoutes");
-const pagamentosRoutes = require("./pagamentoRoutes") 
-const cuponsRoutes = require("./cuponsRoutes")
+const pagamentosRoutes = require("./pagamentoRoutes");
+const cuponsRoutes = require("./cuponsRoutes");
 const lojasRoutes = require("./lojasRoutes");
-const valePresenteRoutes = require("./valePresenteRoutes")
+const valePresenteRoutes = require("./valePresenteRoutes");
+const cadastroRoutes = require("./cadastroRoutes");
 
 const router = Router();
 
@@ -15,7 +16,8 @@ router.use(produtosRoutes);
 router.use(pagamentosRoutes);
 router.use(cuponsRoutes);
 router.use(lojasRoutes);
-router.use(valePresenteRoutes)
+router.use(valePresenteRoutes);
+router.use(cadastroRoutes);
 
 router.use((req, res, next) =>{
     res.render("404");
