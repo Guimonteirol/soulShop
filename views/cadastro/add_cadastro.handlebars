@@ -1,0 +1,100 @@
+<div class="mt-3 container shadow-lg p-3 mb-5 bg-body rounded mt-4 col-md-11">
+    <h2>Cadastre-se na SoulShop</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" action="/cadastro/enviar" class="my-4">
+                <div class="">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" required>
+                </div>
+                <div class=" mt-3">
+                    <label for="sobre" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobre" required>
+                </div>
+                <div class=" mt-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class=" mt-3">
+                    <label for="emailConfirm" class="form-label">Confirme seu Email</label>
+                    <input type="email" class="form-control" id="emailConfirm" required>
+                </div>
+                <div class="mt-3">
+                    <label for="endereco" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" placeholder="Rua..." required>
+                </div>
+                <div class=" mt-3">
+                    <label for="complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Apartmento ..." required>
+                </div>
+                <div class=" mt-3">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" required>
+                </div>
+                <div class=" mt-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <select id="estado" class="form-select">
+                        <option selected>Selecione o Estado</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <h5 class="mt-5">User e senha</h5>
+                <!--Usuário e senha:-->
+                <div class="">
+                    <div id="username" class="input-group mb-2 mt-2">
+                        <span class="input-group-text" id="inputGroup-sizing-default"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg></span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" placeholder="Digite um username" required>
+                    </div>
+                    <div id="senha" class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                <path
+                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                            </svg></span>
+                        <input type="password" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" placeholder="Digite sua senha" required>
+                    </div>
+                    <div id="senhaConfirm" class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="verifica"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-check2-all" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
+                                <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
+                            </svg></button>
+                        <input type="password" class="form-control" placeholder="Confirme sua senha"
+                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
+                </div>
+                <!--Check-->
+                <div class=" mt-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Deseja receber nossas notificações?
+                        </label>
+                    </div>
+                </div>
+                <!--Botão de cadastro-->
+                <div class="">
+                    <button type="submit" class="btn btn-outline-secondary">Cadastrar-se</button>
+                </div>
+            </form>
+        </div>
+        <!--Imagem-->
+            <div class="col-md-6 mt-2 position-relative">
+                <img id="imageCadastro" src="https://i.pinimg.com/564x/ff/35/70/ff35704b74ce91e1a2a63a8d5a58ded3.jpg"
+                alt="SoulShop" class="img-fluid h-100">
+            </div>
+        </div>
+    </div>
+</div>

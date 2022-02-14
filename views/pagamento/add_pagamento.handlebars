@@ -1,9 +1,19 @@
-<section class="m-1">
-  <form action="/pagamentos/enviar" method="POST">
-    <div class="form-group">
-      <label for="nomeP">Pagamento*</label>
-      <input type="text" name="nomeP" class="form-control" required />
+<div class=" container shadow-lg p-3 mb-5 bg-body rounded mt-4 col-md-7 " >
+  <div class="row ">
+    <div class="col-md-5 d-flex align-items-md-center ">
+      <section class=" m-1">
+        <form action="/pagamentos/enviar" method="POST">
+          <div class="form-group ">
+            <label for="nomeP">Pagamento*</label>
+            <input type="text" name="nomeP" class="form-control" required />
+          </div>
+          <button class="btn btn-dark mt-2 ">Criar</button>
+        </form>
+      </section>
+      </div>  
+      <div class="col-md-1 mt-3 position-relative">
+        <img src="https://rockyecommerce.com.br/wp-content/uploads/2018/02/icone-pagamento-e1519828707924.png" alt="Formas de pagamento" width="500px">
+      </div>
     </div>
-    <button class="btn btn-primary mt-2">Criar</button>
-  </form>
-</section>
+  </div>
+</div>
