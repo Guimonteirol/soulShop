@@ -1,6 +1,4 @@
 const Cadastro = require("../models/Cadastro");
-const Produto = require("../models/Produto");
-
 class CadastroController{
 
     static async paginaCadastros(req,res){
