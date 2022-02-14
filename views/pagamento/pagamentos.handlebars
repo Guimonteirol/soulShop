@@ -1,39 +1,52 @@
-
-{{#each pagamentos}}
-<div class="card" style="width: 18rem;">
-  <img src="https://s2.glbimg.com/sZsFGX1Ld-kTh23eLMwFSKcZKPs=/725x38:2048x825/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2020/a/W/J5s1YTTRi6AejH5tyBBg/pix.jpg"
-   class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{this.nomeP}}</h5>
-    <p class="card-text">A forma de pagamento escolhida foi no {{this.nomeP}} </p>
+<div class="m-3 ">
+  <div class="m-3">
+    <a href="/pagamento" class="btn btn-dark">
+      <i class="bi bi-plus">Criar forma de pagamento</i>
+    </a>
   </div>
-  <div class="card-body">
-    <div class="d-flex">
-            <div>
-              <a href="/pagamento/editar/{{this._id}}" class="btn btn-sm btn-warning mx-1">
-                <i class="bi bi-pencil"></i>
-              </a>
+  <div class="container-fluid">
+    <div class="row d-flex align-items-center">
+      {{#each pagamentos}}
+      <div class="col-md-3">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+          <img
+            src="https://i1.wp.com/vitamarketing.com.br/wp-content/uploads/2018/04/formas-de-pagemento-para-seus-clientes.jpg?resize=960%2C600&ssl=1"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{this.nomeP}}</h5>
+            <p class="card-text">A forma de pagamento escolhida foi  {{this.nomeP}} </p>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-end">
+              <div>
+                <a href="/pagamento/editar/{{this._id}}" class="btn btn-sm btn-warning mx-1">
+                  <i class="bi bi-pencil"></i>
+                </a>
+              </div>
+              <div>
+                <form action="/pagamento/deletar" method="POST">
+                  <input name="id" type="hidden" value="{{this._id}}" />
+                  <button id="btndel" class="btn btn-sm btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </form>
+              </div>
             </div>
-            <div>
-              <form action="/pagamento/deletar" method="POST">
-                <input name="id" type="hidden" value="{{this._id}}" />
-                <button id="btndel" class="btn btn-sm btn-danger">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </form>
-            </div>
-            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
   </div>
-</div>
- {{/each}}
 
   <div class="position-fixed bottom-0 start-0 p-3">
     <div id="del_toast" class="toast bg-danger">
-        <div class="d-flex">
-            <div class="toast-body">
-                Usuário excluído com sucesso!
-            </div>
-            <button class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+      <div class="d-flex">
+        <div class="toast-body">
+          Usuário excluído com sucesso!
         </div>
+        <button class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
     </div>
   </div>
+</div>
