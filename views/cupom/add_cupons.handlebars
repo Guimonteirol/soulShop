@@ -1,21 +1,12 @@
 <div class="m-1">
-  <h2>Adicionar produto</h2>
+  <h2>Adicionar cupom</h2>
   <hr />
   <form action="/cupons/enviar" method="POST">
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col">
-          <img
-            src="/img/cupom.png"
-            width="100%"
-            class="img-fluid rounded-start"
-            alt="..."
-          />
-        </div>
+    <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
         <div class="col-md-8">
-          <div class="card-body">
+          <div class="card-body" style="width: 147%;">
             <div class="d-flex justify-content-between">
-              <h5 class="card-title">
+              <h6 class="card-title">
                 <div class="form-group">
                   <label for="nomeCupom">Nome*</label>
                   <input
@@ -25,9 +16,8 @@
                     class="form-control"
                     required
                   />
-                </div>
-              </h5>
-              <h5 class="card-title ps-3">
+              </h6>
+              <h6 class="card-title ps-3">
                 <div class="form-group">
                   <label for="desconto">Desconto*</label>
                   <input
@@ -39,35 +29,38 @@
                     required
                   />
                 </div>
-              </h5>
+              </h6>
             </div>
-            <p class="card-text">
+            <h6 class="card-text">
               <div class="form-group">
-                <label for=" descricao">Descrição*</label>
+                <label for="descricao">Descrição*</label>
                 <textarea
+                style="resize: vertical;"
                   name="descricao"
-                  id="description"
-                  rows="10"
+                  id="descricao"
+                  rows="6"
                   class="form-control"
                   required
                 ></textarea>
-              </div></p>
-            <p class="card-text"><small class="text-muted">
+              </div></h6>
+            <h6 class="card-text">
                  <div class="form-group">
-                  <label for="nomeCupom">Validade*</label>
+                  <label for="validade">Validade*</label>
                   <input
                     type="text"
                     name="validade"
-                    id="name"
+                    id="validade"
                     class="form-control"
                     required
                   />
                 </div>    
-            </small></p>
+            </h6>
           </div>
         </div>
       </div>
     </div>
-       <button class="btn btn-primary mt-2">Criar</button>
+    <button class="btn btn-dark mt-2">Adicionar</button>
   </form>
+  </div>
+</div>
 </div>

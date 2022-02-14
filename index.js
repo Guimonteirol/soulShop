@@ -14,6 +14,7 @@ app.use(express.static("public")); //os arquivos da pagina public vão ser servi
 app.engine("handlebars", exprhbs.engine());
 app.set("view engine", "handlebars");
 
+// importa index de rota
 const routes = require("./routes");
 app.use(routes);
 
